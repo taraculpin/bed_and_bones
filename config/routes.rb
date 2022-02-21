@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'pets#home'
+  resources :pets do
+    resources :bookings, except: :destroy
+  end
+  resources :bookings, only: :destroy
+  get 'my_pets', to: 'pets#my_pets'
+  get 'my_bookings', to: 'bookings#my_bookings'
 end
