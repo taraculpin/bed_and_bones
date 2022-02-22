@@ -14,6 +14,7 @@ class PetsController < ApplicationController
       redirect_to pet_path(@pet)
     else
       redirect_to :new
+    end
   end
 
   def show
@@ -45,4 +46,5 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:name, :age, :address, :price, :species)
   end
+
 end
