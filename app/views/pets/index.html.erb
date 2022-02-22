@@ -6,12 +6,22 @@
 
 <body>
 
-<h1>Pets in London</h1>
+<h1>Pets</h1>
 
 <div class="container">
-  <div>
-
-</div>
+  <% @pets.each do |pet| %>
+  <%= link_to pet do %>
+    <div class="card" id="red">
+      <%= image_tag('macaw.jpg', draggable: "true", id: "placeholder", height: '50', width: '70') %>
+      <p><%= pet.name %></p>
+      <p><%= pet.age %></p>
+      <p><%= pet.price %></p>
+      <p><%= pet.species.name %></p>
+    </div>
+    <% end %>
+  <% end %>
+  </div>
+</a>
 
 
 </body>
