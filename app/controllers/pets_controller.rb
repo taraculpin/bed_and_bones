@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  before_action :find_pet, only: [:show, :edit, :update, :destroy]
+
   def index
     @pets = Pet.all
   end
@@ -9,32 +11,33 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
+    @pet.user_id = current_user.id
     @pet.save
     if @pet.save?
       redirect_to pet_path(@pet)
     else
-      redirect_to :new
+      render :new
     end
   end
 
   def show
-    find_pet
   end
 
   def edit
-    find_pet
   end
 
   def update
-    find_pet
     @pet.update(pet_params)
     redirect_to pet_path(@pet)
   end
 
-  def delete
-    find_pet
+  def destroy
     @pet.destroy
     redirect_to pets_path
+  end
+
+  def my_pets
+    @pets = Pet.where(user_id: current_user.id)
   end
 
   private
@@ -44,7 +47,7 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :address, :price, :species)
+    params.require(:pet).permit(:name, :age, :address, :price, :species_id)
   end
 
 end
