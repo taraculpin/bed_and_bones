@@ -8,7 +8,17 @@
 
 require 'faker'
 
-# user = User.create!(email: 'bob@marley.com', first_name: 'Bob', last_name: 'Marley', password: 'bob123')
+10.times do
+  name = Faker::Name.unique.name.split
+  first_name = name.first
+  last_name = name.last
+  User.create!(
+    email: Faker::Internet.email,
+    first_name: first_name,
+    last_name: last_name,
+    password: 'password'
+  )
+end
 
 10.times do
   Species.create!(name: Faker::Creature::Animal.name)
@@ -24,5 +34,5 @@ end
     species: Species.all.sample,
     user: User.all.sample
   )
-  puts "finished creating #{pet.id} article"
+  puts "finished creating #{pet.id} pet"
 end
