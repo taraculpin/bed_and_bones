@@ -1,8 +1,24 @@
-<h1>New Booking</h1>
-<div class="container col-6 p-3">
-  <%= simple_form_for [ @pet, @booking ] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit %><%= link_to 'Back', pet_path(@pet) %>
-  <% end %>
+<div class="center center-text">
+  <h1>New Booking</h1>
+  <br>
+
+
+
+    <form action="">
+      <label for="start_date">Start date:</label>
+      <input type="date" id="start_date" name="start_date">
+      <label for="end_date">End date:</label>
+      <input type="date" id="end_date" name="end_date"><br><br>
+      <p>Total: £<%=  %></p>
+      <input type="submit" value="Submit">
+      <%= link_to 'Cancel', pet_path(@pet) %>
+    </form>
+
+    <br><br><br>
+    <%= simple_form_for [ @pet, @booking ] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit %><%= link_to 'Back', pet_path(@pet) %>
+    <% end %>
+
 </div>
