@@ -79,3 +79,18 @@ end
       pet1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
       pet1.save!
       puts "finished attaching #{pet1.id} photo"
+
+      puts 'creating pet'
+      pet2 = Pet.create!(
+        name: "Harper",
+        age: 4,
+        address: "Cadogan gardens",
+        price: 70,
+        species: Species.all.sample,
+        user: User.all.sample
+      )
+      puts "finished creating pet"
+      file = URI.open('https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80')
+      pet1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+      pet1.save!
+      puts "finished attaching photo"
