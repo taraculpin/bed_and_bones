@@ -21,7 +21,8 @@
   <p><%= @pet.address %></p>
 
   <div>
-    <%= @pet.photo %>
+    <%#= @pet.photo %>
+    <%= image_tag(@pet.photo) %>
   </div>
 
   <div>
