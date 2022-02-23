@@ -1,1 +1,34 @@
-<h1>My_pets</h1>
+<html>
+<head>
+</head>
+
+<body>
+
+<div class="container text-center">
+  <h1 class="display-1">My Pets</h1>
+  <p><%= @pets.count %> pets</p>
+
+</div>
+
+<div class="container-grid">
+  <% @pets.each do |pet| %>
+      <div class="card card-grid col-sm-4 col-m-6">
+        <%# <%= link_to pet, class: "link" do %>
+          <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%=pet.name.capitalize%></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= pet.species.name.capitalize %></h6>
+            <p class="card-text"><%= pet.age %> years old</p>
+          </div>
+          <div class="card-body price">
+            <h6>£<%= pet.price %> / day</h6>
+          </div>
+          <div class="card-body">
+            <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-primary" %>
+          </div>
+        <%# end %>
+      </div>
+  <% end %>
+</div>
+
+</body>
