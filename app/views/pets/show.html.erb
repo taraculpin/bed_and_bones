@@ -1,1 +1,7 @@
-<h1>Show page</h1>
+<h1>Pet Show Page</h1>
+
+
+<%= link_to 'Book This Pet', new_pet_booking_path(@pet) %> |
+<%= link_to 'Edit This Pet', edit_pet_path(@pet) %> |
+<%= link_to 'Delete This Pet', pet_path(@pet), method: :delete %> |
+<%= link_to 'Back', pets_path %>
