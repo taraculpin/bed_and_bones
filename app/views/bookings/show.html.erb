@@ -1,1 +1,21 @@
-<h1>Upcoming Booking</h1>
+<div class="container-show-booking">
+  <h1>Booking Confirmed:</h1>
+
+  <div class="card card-grid col-sm-4 col-m-6">
+    <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @booking.pet.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @booking.pet.species.name.capitalize %></h6>
+      <p class="card-text">From: <%= @booking.start_date %></p>
+      <p class="card-text">To: <%= @booking.end_date %></p>
+    </div>
+    <div class="card-body price">
+      <h6>£<%= @booking.pet.price %> / day</h6>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <%= link_to 'Back', pets_path %>
+</div>

@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :edit, :update, :destroy]
+  before_action :find_booking, only: [:show, :update, :destroy]
 
   def new
     @pet = Pet.find(params[:pet_id])
@@ -21,8 +21,8 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
   def update
     @booking.update(booking_params)
