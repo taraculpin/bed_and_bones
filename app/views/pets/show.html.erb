@@ -21,11 +21,10 @@
   <p><%= @pet.address %></p>
 
   <div>
-    <%if @pet.photo%>
-     <%= image_tag @pet.photo %>
+    <%if @pet.photo.attached?%>
+     <%= cl_image_tag @pet.photo.key %>
    <% end %>
   </div>
-
   <div>
     <%= @pet.species.name.capitalize %>
   </div>
