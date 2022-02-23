@@ -22,6 +22,10 @@
 
 </div>
 
+<div>
+  <%= link_to "Add new pet", new_pet_path, class: "btn btn-primary" %>
+</div>
+
 <div class="container-grid">
   <% @pets.each do |pet| %>
       <div class="card card-grid col-sm-4 col-m-6">

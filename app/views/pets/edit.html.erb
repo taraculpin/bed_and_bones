@@ -17,4 +17,6 @@
 </nav>
 
 <h1>Edit This Pet</h1>
+<%= link_to 'Edit This Pet', edit_pet_path(@pet) %>
+<%= link_to 'Delete This Pet', pet_path(@pet), method: :delete %> |
 <%= link_to 'Back', pet_path(@pet) %>
