@@ -16,13 +16,15 @@
   </div>
 </nav>
 
+<%= link_to 'Back', pets_path %>
 <div class="container text-center">
   <h1 class="display-1">My Bookings</h1>
 </div>
 
-<div class=" container-bookings-grid">
+
+<div class=" container-bookings-grid center">
   <% @bookings.each do |booking| %>
-    <div class="card-booking col-8">
+    <div class="card-booking col-10 m-auto">
       <%= link_to booking.pet, class: "link" do %>
          <% if booking.pet.photo.attached? %>
           <%= cl_image_tag booking.pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
@@ -36,9 +38,12 @@
         <p>From: <%= booking.start_date %></p>
         <p>To: <%= booking.end_date %></p>
       </div>
+      <div class="cancel">
+        <p><%= link_to 'Cancel booking', booking_path(booking), method: :delete %></p>
+      </div>
     </div>
+    <br>
   <% end %>
 </div>
 
 <br>
-<%# <%= link_to 'Back', pets_path %>
