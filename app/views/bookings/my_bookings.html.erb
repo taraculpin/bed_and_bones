@@ -9,7 +9,6 @@
       To: <%= booking.end_date %>
     </li>
     <%= link_to 'View', pet_booking_path(booking.pet, booking) %> |
-    <%= link_to 'Edit', edit_pet_booking_path(booking.pet, booking) %> |
     <%= link_to 'Delete', booking_path(booking), method: :delete %>
   <% end %>
   <%= link_to 'Back', pets_path %>
