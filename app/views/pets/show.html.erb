@@ -1,7 +1,33 @@
-<h1>Pet Show Page</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Bed & Bones</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "My bookings", my_bookings_path, class:"nav-link"%>
+      </li>
+       <li class="nav-item active">
+        <%= link_to "My pets", my_pets_path, class:"nav-link"%>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<%= link_to 'Book This Pet', new_pet_booking_path(@pet) %> |
-<%= link_to 'Edit This Pet', edit_pet_path(@pet) %> |
-<%= link_to 'Delete This Pet', pet_path(@pet), method: :delete %> |
-<%= link_to 'Back', pets_path %>
+<div class="container">
+  <h1 class="display-1"><%= @pet.name.capitalize %></h1>
+  <p><%= @pet.address %></p>
+
+  <div>
+    <%= @pet.photo %>
+  </div>
+
+  <div>
+    <%= @pet.species.name.capitalize %>
+  </div>
+  <div>
+    <%= link_to 'Book This Pet', new_pet_booking_path(@pet), class: "btn btn-primary" %>
+  </div>
+</div>

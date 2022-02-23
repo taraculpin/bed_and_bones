@@ -1,10 +1,21 @@
-<html>
-<head>
-</head>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Bed & Bones</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<body>
-
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "My bookings", my_bookings_path, class:"nav-link"%>
+      </li>
+       <li class="nav-item active">
+        <%= link_to "My pets", my_pets_path, class:"nav-link"%>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container text-center">
   <h1 class="display-1">Pets</h1>
   <p><%= Pet.count %> pets available near you</p>
@@ -13,9 +24,15 @@
 
 <div class="container-grid">
   <% @pets.each do |pet| %>
+
       <div class="card card-grid col-sm-4 col-m-6">
         <%= link_to pet, class: "link" do %>
-          <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+         <% if pet.photo.attached? %>
+    <%= cl_image_tag pet.photo.key, class: "card-img-top" %>
+  <%else   %>
+    <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+  <% end %>
+          <%#= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
           <div class="card-body">
             <h5 class="card-title"><%=pet.name.capitalize%></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= pet.species.name.capitalize %></h6>
@@ -28,5 +45,3 @@
       </div>
   <% end %>
 </div>
-
-</body>
