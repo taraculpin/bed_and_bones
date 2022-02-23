@@ -20,7 +20,6 @@
   <h1 class="display-1">My Bookings</h1>
 </div>
 
-
 <div class=" container-bookings-grid">
   <% @bookings.each do |booking| %>
     <div class="card-booking col-8">
@@ -31,8 +30,8 @@
         <p>From: <%= booking.start_date %></p>
         <p>To: <%= booking.end_date %></p>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
 <br>
