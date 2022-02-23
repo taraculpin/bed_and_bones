@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'open-uri'
 
 10.times do
   name = Faker::Name.unique.name.split
@@ -36,3 +37,12 @@ end
   )
   puts "finished creating #{pet.id} pet"
 end
+
+pet = Pet.new(
+  name: "garfield",
+  age: 24,
+  address: "22 imbledone high street",
+  price: 34,
+  species: "cat",
+  user: 1
+)
