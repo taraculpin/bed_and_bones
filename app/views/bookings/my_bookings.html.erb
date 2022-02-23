@@ -23,7 +23,13 @@
 <div class=" container-bookings-grid">
   <% @bookings.each do |booking| %>
     <div class="card-booking col-8">
-      <%= link_to image_tag('macaw.jpg'), pet_path(booking.pet) %>
+      <%= link_to booking.pet, class: "link" do %>
+         <% if booking.pet.photo.attached? %>
+          <%= cl_image_tag booking.pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
+        <%else   %>
+          <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+        <% end %>
+        <% end %>
       <div class="card-booking-infos">
         <h3><%= booking.pet.name %></h3>
         <h5><%= booking.pet.species.name.capitalize %></h5>
