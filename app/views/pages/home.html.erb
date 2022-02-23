@@ -1,10 +1,28 @@
 
-<!-- <section class="header">
+<%# <section class="navbar">
 
     <h1><strong>BED & BONES</strong></h1>
     <p>Helping and guiding one creature at a time!</p>
     <a class="btn-bgstroke"><b>Come see a friendly face....</b></a>
-</section> -->
+</section> %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Bed & Bones</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "My bookings", my_bookings_path, class:"nav-link"%>
+      </li>
+       <li class="nav-item active">
+        <%= link_to "My pets", my_pets_path, class:"nav-link"%>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/237/3500/2095.jpg?hmac=y2n_cflHFKpQwLOL1SSCtVDqL8NmOnBzEW7LYKZ-z_o);">
 <div class="logo">

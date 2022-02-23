@@ -1,0 +1,9 @@
+<%= simple_form_for @pet do |f| %>
+  <%= f.input :name, label: 'Pet name' %>
+  <%= f.input :age, label: 'Pet age'%>
+  <%= f.input :address, label: 'Your address'%>
+  <%= f.input :price, label: 'Price per day'%>
+  <%= f.association :species, label: 'Spieces'%>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

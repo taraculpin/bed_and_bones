@@ -12,8 +12,7 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user_id = current_user.id
-    @pet.save
-    if @pet.save?
+    if @pet.save!
       redirect_to pet_path(@pet)
     else
       render :new
@@ -21,6 +20,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def edit
