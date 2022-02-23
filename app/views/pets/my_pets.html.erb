@@ -1,1 +1,44 @@
-<h1>My_pets</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Bed & Bones</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "My bookings", my_bookings_path, class:"nav-link"%>
+      </li>
+       <li class="nav-item active">
+        <%= link_to "My pets", my_pets_path, class:"nav-link"%>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container text-center">
+  <h1 class="display-1">My Pets</h1>
+  <p><%= @pets.count %> pets</p>
+
+</div>
+
+<div class="container-grid">
+  <% @pets.each do |pet| %>
+      <div class="card card-grid col-sm-4 col-m-6">
+        <%# <%= link_to pet, class: "link" do %>
+          <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%=pet.name.capitalize%></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= pet.species.name.capitalize %></h6>
+            <p class="card-text"><%= pet.age %> years old</p>
+          </div>
+          <div class="card-body price">
+            <h6>£<%= pet.price %> / day</h6>
+          </div>
+          <div class="card-body">
+            <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-primary" %>
+          </div>
+        <%# end %>
+      </div>
+  <% end %>
+</div>

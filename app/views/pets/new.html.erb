@@ -1,1 +1,23 @@
-<h1>New page</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Bed & Bones</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "My bookings", my_bookings_path, class:"nav-link"%>
+      </li>
+       <li class="nav-item active">
+        <%= link_to "My pets", my_pets_path, class:"nav-link"%>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h1>New pet</h1>
+
+<%= render 'form', pet: @pet %>
+
+<%= link_to 'Back', pets_path %>
