@@ -2,7 +2,12 @@
   <h1>Booking Confirmed:</h1>
 
   <div class="card card-grid col-sm-4 col-m-6">
-    <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+     <%= link_to @booking.pet, class: "link" do %>
+         <% if @booking.pet.photo.attached? %>
+          <%= cl_image_tag @booking.pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
+        <%else   %>
+          <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+        <% end %>
     <div class="card-body">
       <h5 class="card-title"><%= @booking.pet.name %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= @booking.pet.species.name.capitalize %></h6>
@@ -12,6 +17,7 @@
     <div class="card-body price">
       <h6>£<%= @booking.pet.price %> / day</h6>
     </div>
+    <% end %>
   </div>
 
   <br>
