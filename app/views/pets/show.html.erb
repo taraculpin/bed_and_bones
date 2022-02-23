@@ -16,10 +16,18 @@
   </div>
 </nav>
 
-<h1>Pet Show Page</h1>
+<div class="container">
+  <h1 class="display-1"><%= @pet.name.capitalize %></h1>
+  <p><%= @pet.address %></p>
 
+  <div>
+    <%= image_tag('macaw.jpg', draggable: "true") %>
+  </div>
 
-<%= link_to 'Book This Pet', new_pet_booking_path(@pet) %> |
-<%= link_to 'Edit This Pet', edit_pet_path(@pet) %> |
-<%= link_to 'Delete This Pet', pet_path(@pet), method: :delete %> |
-<%= link_to 'Back', pets_path %>
+  <div>
+    <%= @pet.species.name.capitalize %>
+  </div>
+  <div>
+    <%= link_to 'Book This Pet', new_pet_booking_path(@pet), class: "btn btn-primary" %>
+  </div>
+</div>
