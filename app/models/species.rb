@@ -1,3 +1,3 @@
 class Species < ApplicationRecord
-  has_many :pets
+  belongs_to :pets
 end

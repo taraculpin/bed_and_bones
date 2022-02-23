@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pets#home'
+  root to: 'pages#home'
   resources :pets do
-    resources :bookings, except: :destroy
+    resources :bookings, only: [:show, :new, :create, :edit, :update]
   end
   resources :bookings, only: :destroy
   get 'my_pets', to: 'pets#my_pets'
