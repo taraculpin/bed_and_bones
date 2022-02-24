@@ -1,26 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Bed & Bones</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="center center-text">
+  <h1>New Booking</h1>
+  <br>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "My bookings", my_bookings_path, class:"nav-link"%>
-      </li>
-       <li class="nav-item active">
-        <%= link_to "My pets", my_pets_path, class:"nav-link"%>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <form action="/bookings">
+      <label for="start_date">Start date:</label>
+      <input type="date" id="start_date" name="start_date">
+      <label for="end_date">End date:</label>
+      <input type="date" id="end_date" name="end_date"><br><br>
+      <p>Total: £<%=  %></p>
+      <input type="submit" value="Submit">
+      <%= link_to 'Cancel', pet_path(@pet) %>
+    </form>
 
-<h1>New Booking</h1>
-<div class="container col-6 p-3">
-  <%= simple_form_for [ @pet, @booking ] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit %><%= link_to 'Back', pet_path(@pet) %>
-  <% end %>
+    <br><br><br>
+    <%= simple_form_for [ @pet, @booking ] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit %><%= link_to 'Back', pet_path(@pet) %>
+    <% end %>
+
 </div>
