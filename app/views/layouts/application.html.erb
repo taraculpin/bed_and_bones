@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bed & Bones</title>
+  <%# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"> %>
+    <title>Bed & Bones - Find your perfect paws</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,5 +18,9 @@
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
+
 </html>
