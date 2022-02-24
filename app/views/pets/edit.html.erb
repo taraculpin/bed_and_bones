@@ -1,17 +1,21 @@
-<h1>Edit This Pet</h1>
-<%= simple_form_for @pet do |f| %>
-  <%= f.input :name, label: 'Pet name' %>
-  <%= f.input :age, label: 'Pet age'%>
-  <%= f.input :address, label: 'Your address'%>
-  <%= f.input :price, label: 'Price per day'%>
-  <%= f.association :species, label: 'Spieces'%>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<div class="centered col-6 m-auto">
+  <h1 class="center-text">Edit This Pet</h1>
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name, label: 'Pet name' %>
+    <%= f.input :age, label: 'Pet age'%>
+    <%= f.input :address, label: 'Your address'%>
+    <%= f.input :price, label: 'Price per day'%>
+    <%= f.association :species, label: 'Spieces'%>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to 'Cancel', my_pets_path, class: "btn btn-warning" %>
+  <% end %>
 
-<div class="edit-buttons">
 
-<%#= link_to 'Edit This Pet', edit_pet_path(@pet), class: "btn btn-primary" %>
-<%= link_to 'Delete This Pet', pet_path(@pet), method: :delete, class: "btn btn-warning" %> |
-<%= link_to 'Back', pet_path(@pet), class: "btn btn-success" %>
+
+  <div class="edit-buttons">
+
+    <%= link_to 'Delete This Pet', pet_path(@pet), method: :delete, class: "btn btn-warning" %>
+
+  </div>
 </div>
