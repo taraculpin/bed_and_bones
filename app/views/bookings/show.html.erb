@@ -1,7 +1,7 @@
-<div class="container-show-booking">
+<div class="center center-text">
   <h1>Booking Confirmed:</h1>
 
-  <div class="card card-grid col-sm-4 col-m-6">
+  <div class="card col-6 center-card m-auto">
      <%= link_to @booking.pet, class: "link" do %>
          <% if @booking.pet.photo.attached? %>
           <%= cl_image_tag @booking.pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
@@ -19,9 +19,5 @@
     </div>
     <% end %>
   </div>
-
-  <br>
-  <br>
- <p><%= link_to 'Leave a Review', new_pet_booking_review_path(@booking.pet.id, @booking.id), class: "btn btn-primary" %></p>
-  <%= link_to 'Back', pets_path %>
+  <%= link_to 'View My Bookings', my_bookings_path %>
 </div>
