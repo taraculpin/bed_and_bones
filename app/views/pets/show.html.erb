@@ -1,21 +1,23 @@
-<div class="container">
-  <h1 class="display-1"><%= @pet.name.capitalize %></h1>
-  <p><%= @pet.address %></p>
-
-  <div>
-    <%if @pet.photo.attached?%>
-     <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-   <% end %>
+<br>
+  <div class="card col-7 col-md-5 col-lg-3 center-card m-auto">
+    <% if @pet.photo.attached? %>
+      <%= cl_image_tag @pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
+    <% else %>
+      <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%=@pet.name.capitalize%></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @pet.species.name.capitalize %></h6>
+      <p class="card-text"><%= @pet.age %> years old</p>
+    </div>
+    <div class="card-body price">
+      <h6>£<%= @pet.price %> / day</h6>
+    </div>
+    <div class="card-body">
+      <%= link_to 'Book This Pet', new_pet_booking_path(@pet), class: "btn btn-primary" %>
+      <%= link_to 'Cancel', pets_path, class: "btn btn-warning" %>
+    </div>
   </div>
-  <div>
-    <%= @pet.species.name.capitalize %>
-  </div>
-  <div>
-
-    <%= link_to 'Book This Pet', new_pet_booking_path(@pet), class: "btn btn-primary" %>
-    <%= link_to 'Back', pets_path %>
-  </div>
-</div>
 
  <% @pet.bookings.each do |booking| %>
  <% if booking.reviews.present? %>
@@ -23,6 +25,3 @@
   <%= review.content %>
   <% end %>
  <% end %>
-
-
-<% end %>
