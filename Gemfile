@@ -33,6 +33,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'pg_search'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'

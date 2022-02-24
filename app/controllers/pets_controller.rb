@@ -2,7 +2,11 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pets = Pet.all
+    if params[:query].present?
+      @pets = Pet.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @pets = Pet.all
+    end
   end
 
   def new
