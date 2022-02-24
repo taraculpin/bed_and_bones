@@ -22,6 +22,6 @@
 
   <br>
   <br>
- <p><%= link_to 'Leave a Review', new_pet_booking_review_path(@booking.pet.id, @booking.id) %></p>
+ <p><%= link_to 'Leave a Review', new_pet_booking_review_path(@booking.pet.id, @booking.id), class: "btn btn-primary" %></p>
   <%= link_to 'Back', pets_path %>
 </div>

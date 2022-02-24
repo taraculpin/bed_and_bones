@@ -17,7 +17,12 @@
   </div>
 </div>
 
- <% @pet.bookings.each do |booking|  %>
+ <% @pet.bookings.each do |booking| %>
  <% if booking.reviews.present? %>
+  <% booking.reviews.each do |review|  %>
+  <%= review.content %>
   <% end %>
+ <% end %>
+
+
 <% end %>
