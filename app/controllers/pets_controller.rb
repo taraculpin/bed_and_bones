@@ -3,11 +3,19 @@ class PetsController < ApplicationController
 
   def index
     if params[:query].present?
-      # @pets = Pet.where("name ILIKE ?", "%#{params[:query]}%")
       sql_query = "pets.name ILIKE :query OR species.name ILIKE :query"
       @pets = Pet.joins(:species).where(sql_query, query: "%#{params[:query]}%")
     else
       @pets = Pet.all
+    end
+
+    @markers = @pets.geocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { pet: pet }),
+        image_url: helpers.asset_url("pawprint.png")
+      }
     end
   end
 
