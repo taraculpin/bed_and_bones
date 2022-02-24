@@ -4,7 +4,7 @@
     <%= simple_form_for([ @pet, @booking, @review ]) do |f| %>
         <%= f.input :content, as: :text %>
         <%= f.input :rating, collection: (0..10)  %>
-        <%= f.button :submit, class: "btn btn-primary" %>
-        <%= link_to 'Cancel', pet_path(@pet), class: "btn btn-warning" %>
+        <%= f.button :submit, class: "custom-btn blue" %>
+        <%= link_to 'Cancel', pet_path(@pet), class: "custom-btn orange" %>
     <% end %>
 </div>

@@ -1,12 +1,32 @@
 .custom-btn {
+  border-radius: 20px;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+input {
+  line-height: normal;
+}
+
+.custom-btn:hover {
+  opacity: 0.8;
+  color: white;
+  text-decoration: none;
+}
+
+.long-card-btn {
   border-radius: 16px;
   color: white;
   border: 1px solid white;
   padding: 8px 16px;
   text-decoration: none;
+  margin-right: 8px;
 }
 
-.custom-btn:hover {
+.long-card-btn:hover {
   opacity: 0.8;
   color: white;
   text-decoration: none;
@@ -24,6 +44,19 @@
   background-color: #E76F51;
 }
 
-.mr-6 {
-  margin-right: 6px;
+.light-orange {
+  background-color: #F4A261;
+}
+
+.dark-blue {
+  background-color: #264653;
+}
+
+.btn {
+  line-height: normal;
+  vertical-align: 0;
+}
+
+.navbar-btn {
+  line-height: 1.5;
 }

@@ -1,7 +1,7 @@
 <div class="container text-center">
   <h1 class="display-1">My Pets</h1>
-  <p><%= @pets.count %> pets</p>
-  <%= link_to "Add new pet", new_pet_path, class: "btn btn-primary" %>
+  <p><%= @pets.count %> pets</p><br>
+  <%= link_to "Add Pet", new_pet_path, class: "custom-btn blue" %>
 </div>
 <br>
 <br>
@@ -23,8 +23,8 @@
             <h6>£<%= pet.price %> / day</h6>
           </div>
           <div class="card-body">
-            <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-primary" %>
-            <%= link_to 'Delete', pet_path(pet), method: :delete, class: "btn btn-warning" %>
+            <%= link_to "Edit", edit_pet_path(pet), class: "custom-btn blue" %>
+            <%= link_to 'Delete', pet_path(pet), method: :delete, class: "custom-btn orange" %>
           </div>
         <% end %>
       </div>

@@ -19,8 +19,8 @@
           <p>To: <%= booking.end_date %></p>
         </div>
         <div>
-          <p><%= link_to 'Leave a Review', new_pet_booking_review_path(booking.pet.id, booking.id), class: "custom-btn blue mr-6" %></p><br>
-          <p><%= link_to 'Cancel booking', booking_path(booking), class: "custom-btn orange mr-6",  method: :delete %></p>
+          <p><%= link_to 'Leave a Review', new_pet_booking_review_path(booking.pet.id, booking.id), class: "long-card-btn blue mr-8" %></p><br>
+          <p><%= link_to 'Cancel booking', booking_path(booking), class: "long-card-btn orange mr-8",  method: :delete %></p>
         </div>
       </div>
     </div>
