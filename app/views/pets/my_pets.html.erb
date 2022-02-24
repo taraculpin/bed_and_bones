@@ -5,15 +5,15 @@
 </div>
 <br>
 <br>
-<div class="container-grid min-height">
+<div class="container containers-grid container min-height">
   <% if @pets.count == 0 %>
     <p class="text-center">You haven't added any pets yet</p>
   <% else %>
     <% @pets.each do |pet| %>
-      <div class="card card-grid col-sm-4 col-m-6">
+      <div class="card cards-grid">
           <%= link_to edit_pet_path(pet), class: "link" do %>
             <% if pet.photo.attached? %>
-              <%= cl_image_tag pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
+              <%= cl_image_tag pet.photo.key, class: "card-img-pets", crop: :limit%>
             <%else   %>
               <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
             <% end %>
