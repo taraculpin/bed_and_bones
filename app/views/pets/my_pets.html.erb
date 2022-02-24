@@ -9,7 +9,7 @@
   <% @pets.each do |pet| %>
       <div class="card card-grid col-sm-4 col-m-6">
         <%# <%= link_to pet, class: "link" do %>
-           <%= link_to pet, class: "link" do %>
+           <%= link_to edit_pet_path(pet), class: "link" do %>
          <% if pet.photo.attached? %>
           <%= cl_image_tag pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
         <%else   %>
@@ -25,6 +25,8 @@
           </div>
           <div class="card-body">
             <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-primary" %>
+            <%= link_to 'Delete', pet_path(pet), method: :delete, class: "btn btn-warning" %>
+
           </div>
         <% end %>
         <%# end %>
