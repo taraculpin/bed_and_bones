@@ -7,15 +7,6 @@ export default class extends Controller {
     markers: Array
   }
 
-  // connect() {
-  //   mapboxgl.accessToken = this.apiKeyValue
-
-  //   this.map = new mapboxgl.Map({
-  //     container: this.element,
-  //     style: "mapbox://styles/mapbox/streets-v10"
-  //   })
-  // }
-
   connect() {
     // [...]
     mapboxgl.accessToken = this.apiKeyValue
