@@ -5,9 +5,9 @@
 </div>
 <br>
 <br>
-<div class="container-grid">
+<div class="container-grid d-flex">
   <% @pets.each do |pet| %>
-    <div class="card card-grid col-sm-4 col-m-6">
+    <div class="card card-grid m-4">
         <%= link_to edit_pet_path(pet), class: "link" do %>
           <% if pet.photo.attached? %>
             <%= cl_image_tag pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
