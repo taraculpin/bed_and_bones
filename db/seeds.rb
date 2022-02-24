@@ -59,7 +59,6 @@ end
 
       puts 'creating pet'
 
-      sloth = Species.create!(name: "sloth")
 
       pet2 = Pet.create!(
         name: "Slothie",
@@ -196,7 +195,7 @@ end
       puts 'creating pet'
 
       pet1 = Pet.create!(
-        name: "Bixby",
+        name: "Brandy",
         age: 7,
         address: "nutford place london",
         price: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
@@ -215,7 +214,7 @@ end
       puts 'creating pet'
 
       pet2 = Pet.create!(
-        name: "Slothie",
+        name: "Sammie",
         age: 4,
         address: "brick lane london",
         price: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
@@ -231,7 +230,7 @@ end
       puts "finished attaching photo"
 
       pet3 = Pet.create!(
-        name: "Harper",
+        name: "Pixie",
         age: 4,
         address: "augusta street london",
         price: 100,
@@ -248,7 +247,7 @@ end
       puts "finished attaching photo"
 
       pet4 = Pet.create!(
-        name: "Rain",
+        name: "Lento",
         age: 1,
         address: "Cadogan gardens",
         price: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
@@ -264,7 +263,7 @@ end
       puts "finished attaching photo"
 
       pet5 = Pet.create!(
-        name: "Lily",
+        name: "Tilly",
         age: 4,
         address: "ellen street london",
         price: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
@@ -296,7 +295,7 @@ end
       puts "finished attaching photo"
 
       pet7 = Pet.create!(
-        name: "Maverick",
+        name: "Damsie",
         age: 4,
         address: "162 Eversholt St, London NW1 1BL",
         price: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
@@ -312,7 +311,7 @@ end
       puts "finished attaching photo"
 
       pet8 = Pet.create!(
-        name: "Snowball",
+        name: "Lee",
         age: 13,
         address: "Cadogan gardens",
         price: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
@@ -328,7 +327,7 @@ end
       puts "finished attaching photo"
 
       pet9 = Pet.create!(
-        name: "Boston",
+        name: "Richie",
         age: 1,
         address: "120 Eversholt St, London NW1 1BL",
         price: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500].sample,
