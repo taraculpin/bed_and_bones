@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:show, :new, :create, :edit, :update] do
       resources :reviews, only: [:new, :create]
     end
-    resources :bookings, only: :destroy
-    get 'my_pets', to: 'pets#my_pets'
-    get 'my_bookings', to: 'bookings#my_bookings'
   end
+  resources :bookings, only: :destroy
+  get 'my_pets', to: 'pets#my_pets'
+  get 'my_bookings', to: 'bookings#my_bookings'
 end
