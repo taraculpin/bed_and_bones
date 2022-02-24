@@ -8,10 +8,10 @@ class ReviewsController < ApplicationController
 
     def create
       @review = Review.new(review_params)
-      @pet = Pet.find(params[:pet_id])
-      @review.pets = @pets
+      @booking = Booking.find(params[:booking_id])
+      @review.booking = @booking
       if @review.save
-        redirect_to pet_my_bookings_path(@pet)
+        redirect_to pet_path(@booking.pet)
       else
         render :new
       end

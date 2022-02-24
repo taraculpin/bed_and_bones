@@ -11,7 +11,13 @@
     <%= @pet.species.name.capitalize %>
   </div>
   <div>
+
     <%= link_to 'Book This Pet', new_pet_booking_path(@pet), class: "btn btn-primary" %>
     <%= link_to 'Back', pets_path %>
   </div>
 </div>
+
+ <% @pet.bookings.each do |booking|  %>
+ <% if booking.reviews.present? %>
+  <% end %>
+<% end %>
