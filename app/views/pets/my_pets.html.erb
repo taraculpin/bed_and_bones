@@ -25,6 +25,8 @@
           </div>
           <div class="card-body">
             <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-primary" %>
+            <%= link_to 'Delete', pet_path(pet), method: :delete, class: "btn btn-warning" %>
+
           </div>
         <% end %>
         <%# end %>
