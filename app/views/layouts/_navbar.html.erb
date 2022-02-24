@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand pl-5px" href="/">Bed & Bones</a>
+<nav class="navbar navbar-padding navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Bed & Bones</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,10 +20,12 @@
       <%= form_tag pets_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "form-control rounded-pill",
           placeholder: "Find a pet"
           %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+          </div>
+          <div>
+        <%= submit_tag "Search", class: "btn btn-primary pr-5px rounded-pill" %>
       <% end %>
     </div>
   </div>
