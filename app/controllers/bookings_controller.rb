@@ -19,6 +19,8 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @pet = Pet.find(params[:pet_id])
+    @review = Review.new
   end
 
   # def edit
