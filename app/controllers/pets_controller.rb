@@ -3,11 +3,13 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    # the `geocoded` scope filters only pets with coordinates (latitude & longitude)
     @markers = @pets.geocoded.map do |pet|
       {
         lat: pet.latitude,
-        lng: pet.longitude
+        lng: pet.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { pet: pet }),
+        image_url: helpers.asset_url("pawprint.png")
       }
     end
   end
