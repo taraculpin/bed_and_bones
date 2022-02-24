@@ -2,8 +2,13 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pets = Pet.all
-    # the `geocoded` scope filters only pets with coordinates (latitude & longitude)
+    if params[:query].present?
+      sql_query = "pets.name ILIKE :query OR species.name ILIKE :query"
+      @pets = Pet.joins(:species).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @pets = Pet.all
+    end
+
     @markers = @pets.geocoded.map do |pet|
       {
         lat: pet.latitude,
