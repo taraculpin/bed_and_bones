@@ -18,3 +18,10 @@
       <%= link_to 'Cancel', pets_path, class: "btn btn-warning" %>
     </div>
   </div>
+
+ <% @pet.bookings.each do |booking| %>
+ <% if booking.reviews.present? %>
+  <% booking.reviews.each do |review|  %>
+  <%= review.content %>
+  <% end %>
+ <% end %>
