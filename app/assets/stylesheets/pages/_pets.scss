@@ -6,12 +6,24 @@
 .price {
   align-items: flex-end;
 }
+// .container-grid {
+//   grid-template-columns: 1fr;
+//   flex-grow: 1;
+//   justify-content: center;
+//   border: 2px solid red;
+//   width: 50%
+// }
+
+.container-index-cards {
+  width:50%;
+  margin-right: 20px;
+}
 
 
 .card-product {
   overflow: hidden;
   height: 25vh;
-  width: 33vw;
+  width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -26,10 +38,10 @@
   height: 100%;
   width: 250px;
   object-fit: cover;
-  position: relative;
-  left: 10px;
-  top: 50px;
-  border-radius: 2px;
+  // position: relative;
+  // left: 10px;
+  // top: 50px;
+  // border-radius: 2px;
 }
 
 .card-product h2 {
@@ -55,9 +67,10 @@
 }
 
 .card-product-infos {
-  position: relative;
-  left: 350px;
-  bottom: 75px;
+  margin-left: 20px;
+  // position: relative;
+  // left: 350px;
+  // bottom: 75px;
 }
 
 .link {
@@ -67,4 +80,20 @@
 .link:hover {
   text-decoration: none;
   color: $black;
+}
+
+.index-div {
+  display: flex;
+}
+.title {
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.map {
+  height: 100%;
+  position: sticky;
+  top: 0;
 }
