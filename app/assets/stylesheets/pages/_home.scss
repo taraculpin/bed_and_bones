@@ -9,6 +9,12 @@
 //     mix-blend-mode: color;
 // }
 
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+
 .banner {
   background-size: cover;
   background-position: center;

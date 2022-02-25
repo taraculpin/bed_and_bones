@@ -1,16 +1,17 @@
 <div class="container text-center">
+<br>
   <h1 class="display-1">My Pets</h1>
-  <p><%= @pets.count %> pets</p><br>
+  <br>
   <%= link_to "Add Pet", new_pet_path, class: "custom-btn blue" %>
 </div>
 <br>
 <br>
 
 
-<div class="container containers-grid container min-height">
   <% if @pets.count == 0 %>
     <p class="text-center">You haven't added any pets yet</p>
   <% else %>
+    <div class="container containers-grid container min-height">
     <% @pets.each do |pet| %>
       <div class="card cards-grid">
           <%= link_to edit_pet_path(pet), class: "link" do %>
