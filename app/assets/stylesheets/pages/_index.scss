@@ -3,21 +3,10 @@
 @import "pets";
 @import "bookings";
 @import "edit";
-.index-div {
-  display: flex;
-}
-.title {
-  position: sticky;
-  top: 0;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-.map {
-  height: 100%;
-  position: sticky;
-  top: 0;
-}
+@import "my_pets";
+
+
+
 
 body {
   background-image: linear-gradient(to right, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51)
@@ -31,6 +20,7 @@ body {
 //   justify-content: center;
 //   border: 2px solid red;
 // }
+
 // .card-grid {
 //   background-size: cover;
 //   background-position: center;

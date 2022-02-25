@@ -1,32 +1,37 @@
 <div class="container text-center">
   <h1 class="display-1">My Pets</h1>
-  <p><%= @pets.count %> pets</p>
-  <%= link_to "Add new pet", new_pet_path, class: "btn btn-primary" %>
+  <p><%= @pets.count %> pets</p><br>
+  <%= link_to "Add Pet", new_pet_path, class: "custom-btn blue" %>
 </div>
 <br>
 <br>
-<div class="container-grid">
-  <% @pets.each do |pet| %>
-    <div class="card card-grid col-sm-4 col-m-6">
-        <%= link_to edit_pet_path(pet), class: "link" do %>
-          <% if pet.photo.attached? %>
-            <%= cl_image_tag pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
-          <%else   %>
-            <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+
+<div class="container containers-grid container min-height">
+  <% if @pets.count == 0 %>
+    <p class="text-center">You haven't added any pets yet</p>
+  <% else %>
+    <% @pets.each do |pet| %>
+      <div class="card cards-grid">
+          <%= link_to edit_pet_path(pet), class: "link" do %>
+            <% if pet.photo.attached? %>
+              <%= cl_image_tag pet.photo.key, class: "card-img-pets", crop: :limit%>
+            <%else   %>
+              <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%=pet.name.capitalize%></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= pet.species.name.capitalize %></h6>
+              <p class="card-text"><%= pet.age %> years old</p>
+            </div>
+            <div class="card-body price">
+              <h6>£<%= pet.price %> / day</h6>
+            </div>
+            <div class="card-body">
+              <%= link_to "Edit", edit_pet_path(pet), class: "custom-btn blue" %>
+              <%= link_to 'Delete', pet_path(pet), method: :delete, class: "custom-btn orange" %>
+            </div>
           <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><%=pet.name.capitalize%></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= pet.species.name.capitalize %></h6>
-            <p class="card-text"><%= pet.age %> years old</p>
-          </div>
-          <div class="card-body price">
-            <h6>£<%= pet.price %> / day</h6>
-          </div>
-          <div class="card-body">
-            <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-primary" %>
-            <%= link_to 'Delete', pet_path(pet), method: :delete, class: "btn btn-warning" %>
-          </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
   <% end %>
 </div>

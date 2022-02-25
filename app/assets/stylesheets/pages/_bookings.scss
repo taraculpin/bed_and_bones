@@ -23,7 +23,6 @@
 .card-booking p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
 }
@@ -34,4 +33,14 @@
 
 .cancel {
   justify-content: end;
+}
+
+.card-info {
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.min-height {
+  min-height: 65vh;
 }
