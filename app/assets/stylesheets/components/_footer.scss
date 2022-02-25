@@ -12,12 +12,17 @@
   align-items: center;
 }
 .footer-links a {
+  text-decoration: none;
   color: black;
   opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   padding: 0px 10px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
 }
 .footer-links a:hover {
-  opacity: 7;
+  opacity: 50;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 5px 5px rgba(161, 4, 140, 0.753);
 }
