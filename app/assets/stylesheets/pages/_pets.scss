@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .price {
   align-items: flex-end;
 }
@@ -15,10 +14,9 @@
 // }
 
 .container-index-cards {
-  width:50%;
+  width: 50%;
   margin-right: 20px;
 }
-
 
 .card-product {
   overflow: hidden;
@@ -46,7 +44,7 @@
 
 .card-product h2 {
   font-size: 26px;
-  font-weight: bold;
+  // font-weight: bold;
   margin: 0;
 }
 
