@@ -1,0 +1,62 @@
+.custom-btn {
+  border-radius: 20px;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+input {
+  line-height: normal;
+}
+
+.custom-btn:hover {
+  opacity: 0.8;
+  color: white;
+  text-decoration: none;
+}
+
+.long-card-btn {
+  border-radius: 16px;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.long-card-btn:hover {
+  opacity: 0.8;
+  color: white;
+  text-decoration: none;
+}
+
+.yellow {
+  background-color: #E9C46A;
+}
+
+.blue {
+  background-color: #2A9D8F;
+}
+
+.orange {
+  background-color: #E76F51;
+}
+
+.light-orange {
+  background-color: #F4A261;
+}
+
+.dark-blue {
+  background-color: #264653;
+}
+
+.btn {
+  line-height: normal;
+  vertical-align: 0;
+}
+
+.navbar-btn {
+  line-height: 1.5;
+}
