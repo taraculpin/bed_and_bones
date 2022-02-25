@@ -2,16 +2,17 @@
   <h1 class="display-1">My Bookings</h1>
 </div>
 
-
-<div class=" container-bookings-grid center">
-  <% @bookings.each do |booking| %>
-    <div class="card-booking col-10 m-auto">
-      <% if booking.pet.photo.attached? %>
-          <%= cl_image_tag booking.pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
-      <%else   %>
-        <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
-      <% end %>
-      <div class="card-info d-flex">
+<div class="min-height container-bookings-grid center">
+  <% if @bookings.count == 0 %>
+    <p class="text-center"> You haven't made any bookings yet </p>
+  <% else %>
+    <% @bookings.each do |booking| %>
+      <div class="card-booking col-10 m-auto">
+        <% if booking.pet.photo.attached? %>
+            <%= cl_image_tag booking.pet.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill%>
+        <%else   %>
+          <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
+        <% end %>
         <div class="card-booking-infos">
           <h3><%= booking.pet.name %></h3>
           <h5><%= booking.pet.species.name.capitalize %></h5>

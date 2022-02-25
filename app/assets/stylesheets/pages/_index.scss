@@ -3,29 +3,10 @@
 @import "pets";
 @import "bookings";
 @import "edit";
-.index-div {
-  display: flex;
-}
-.title {
-  position: sticky;
-  top: 0;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-.map {
-  height: 100%;
-  position: sticky;
-  top: 0;
-}
+@import "my_pets";
 
-// .container-grid {
-//   display: grid;
-//   grid-template-columns: 1fr;
-//   flex-grow: 1;
-//   justify-content: center;
-//   border: 2px solid red;
-// }
+
+
 // .card-grid {
 //   background-size: cover;
 //   background-position: center;
