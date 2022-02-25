@@ -3,7 +3,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 
 const initSweetalert = (selector, options = {}, callback = () => {}) => {
-  // document.addEventListener("turbolinks:load", () => {
+  document.addEventListener("turbolinks:load", () => {
   const swalButton = document.querySelectorAll(selector);
   console.log(swalButton)
   if (swalButton) { // protect other pages
@@ -20,7 +20,7 @@ const initSweetalert = (selector, options = {}, callback = () => {}) => {
       });
     });
   }
-  // });
+  });
 };
 
 export { initSweetalert };
