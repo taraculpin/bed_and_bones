@@ -1,6 +1,10 @@
 <div class="container text-center">
     <h1 class="display-1">Pets</h1>
-    <p><%= Pet.count %> pets available near you</p>
+    <% if @pets.count == 0 %>
+      <p>No pets found </p>
+    <% else %>
+    <p><%= @pets.count %> pets available</p>
+    <% end %>
 </div>
 
 <div class="index-div">
