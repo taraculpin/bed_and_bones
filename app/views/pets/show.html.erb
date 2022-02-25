@@ -8,7 +8,11 @@
     <div class="card-body">
       <h2 class="card-title"><%=@pet.name.capitalize%></h2>
       <p class="card-subtitle mb-2 text-muted"><%= @pet.species.name.capitalize %></p>
-      <p class="card-text"><%= @pet.age %> years old</p>
+      <% if (@pet.age < 2)  %>
+        <p class="card-text"><%= @pet.age %> year old</p>
+      <% else %>
+        <p class="card-text"><%= @pet.age %> years old</p>
+      <% end %>
     </div>
     <div class="card-body price">
       <p>£<%= @pet.price %> / day</p>
