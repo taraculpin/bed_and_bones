@@ -320,7 +320,7 @@ end
       )
       puts "finished creating pet"
 
-      file = URI.open('https://upload.wikimedia.org/wikipedia/commons/1/12/Amazon.parrot.arp.jpg')
+      file = URI.open('https://www.thesprucepets.com/thmb/i7WQGhM_FSpszuPA1d-OtD71nak=/3865x2576/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-of-gold-and-blue-macaw-perching-on-tree-962288862-5b50073e46e0fb0037c23c23.jpg')
       pet8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
       pet8.save!
 
