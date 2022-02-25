@@ -24,7 +24,11 @@
           <div class="card-product-infos">
             <h2><%=pet.name.capitalize%></h2>
             <p><%= pet.species.name.capitalize %></p>
-            <p><%= pet.age %> years old</p>
+            <% if (pet.age < 2)  %>
+                <p class="card-text"><%= pet.age %> year old</p>
+            <% else %>
+              <p class="card-text"><%= pet.age %> years old</p>
+            <% end %>
             <p>£<%= pet.price %> / day</p>
         </div>
         <% end %>
