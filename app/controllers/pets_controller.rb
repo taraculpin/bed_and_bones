@@ -6,7 +6,7 @@ class PetsController < ApplicationController
       sql_query = "pets.name ILIKE :query OR species.name ILIKE :query"
       @pets = Pet.joins(:species).where(sql_query, query: "%#{params[:query]}%")
     else
-      @pets = Pet.all
+      @pets = Pet.all.order(created_at: :desc)
     end
 
     @markers = @pets.geocoded.map do |pet|
