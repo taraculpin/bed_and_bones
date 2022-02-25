@@ -14,3 +14,16 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import { initSweetalert } from './init_sweetalert';
+
+initSweetalert('.sweet-alert-demo', {
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Delete it!'
+}, (value) => {
+  console.log(value);
+});
