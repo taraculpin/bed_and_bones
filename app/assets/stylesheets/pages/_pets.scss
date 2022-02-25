@@ -27,8 +27,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  border-top: 1px solid grey;
-  border-left: 5px solid grey;
+  border-left: 5px solid rgba(18, 253, 57, 0.452);
   margin-left: 5px;
 }
 
@@ -135,6 +134,7 @@ cursive;
 
 .card-body {
   text-align: center;
+  }
 
 }
 
