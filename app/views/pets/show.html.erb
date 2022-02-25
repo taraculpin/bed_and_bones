@@ -6,15 +6,19 @@
       <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
     <% end %>
     <div class="card-body">
-      <h5 class="card-title"><%=@pet.name.capitalize%></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= @pet.species.name.capitalize %></h6>
-      <p class="card-text"><%= @pet.age %> years old</p>
+      <h2 class="card-title"><%=@pet.name.capitalize%></h2>
+      <p class="card-subtitle mb-2 text-muted"><%= @pet.species.name.capitalize %></p>
+      <% if (@pet.age < 2)  %>
+        <p class="card-text"><%= @pet.age %> year old</p>
+      <% else %>
+        <p class="card-text"><%= @pet.age %> years old</p>
+      <% end %>
     </div>
     <div class="card-body price">
-      <h6>£<%= @pet.price %> / day</h6>
+      <p>£<%= @pet.price %> / day</p>
     </div>
-    <div class="card-body">
-      <%= link_to 'Book Pet', new_pet_booking_path(@pet), class: "custom-btn blue" %>
+    <div class="card-body book-now">
+      <%= link_to 'Book Now', new_pet_booking_path(@pet), class: "custom-btn blue "%>
       <%= link_to 'Cancel', pets_path, class: "custom-btn orange" %>
     </div>
   </div>

@@ -6,6 +6,7 @@
 <br>
 <br>
 
+
 <div class="container containers-grid container min-height">
   <% if @pets.count == 0 %>
     <p class="text-center">You haven't added any pets yet</p>
@@ -28,10 +29,11 @@
             </div>
             <div class="card-body">
               <%= link_to "Edit", edit_pet_path(pet), class: "custom-btn blue" %>
-              <%= link_to 'Delete', pet_path(pet), method: :delete, class: "custom-btn orange" %>
+              <button class="sweet-alert-demo custom-btn orange">Delete</button>
+              <%= link_to '', pet_path(pet), method: :delete, class: "pet-delete hidden" %>
             </div>
           <% end %>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
