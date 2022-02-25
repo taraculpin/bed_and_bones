@@ -16,7 +16,9 @@
 
 .container-index-cards {
   width:50%;
+  margin-right: 20px;
 }
+
 
 .card-product {
   overflow: hidden;
@@ -36,10 +38,10 @@
   height: 100%;
   width: 250px;
   object-fit: cover;
-  position: relative;
-  left: 10px;
-  top: 50px;
-  border-radius: 2px;
+  // position: relative;
+  // left: 10px;
+  // top: 50px;
+  // border-radius: 2px;
 }
 
 .card-product h2 {
@@ -65,9 +67,10 @@
 }
 
 .card-product-infos {
-  position: relative;
-  left: 350px;
-  bottom: 75px;
+  margin-left: 20px;
+  // position: relative;
+  // left: 350px;
+  // bottom: 75px;
 }
 
 .link {

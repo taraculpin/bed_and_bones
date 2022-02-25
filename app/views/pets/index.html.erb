@@ -8,12 +8,14 @@
   <div class="container-grid">
     <% @pets.each do |pet| %>
       <div class="card-product">
+        <div>
         <%= link_to pet, class: "link" do %>
                 <% if pet.photo.attached? %>
                   <%= cl_image_tag pet.photo.key, class: "card-img-top", width: 600 %>
                 <%else   %>
                   <%= image_tag('macaw.jpg', draggable: "true", class: "card-img-top") %>
                 <% end %>
+          </div>
           <div class="card-product-infos">
             <h2><%=pet.name.capitalize%></h2>
             <p><%= pet.species.name.capitalize %></p>
@@ -25,14 +27,10 @@
     <% end %>
   </div>
   </div>
-
-
-
     <div class = "map" style="width: 50%; height: 100vh;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-
   </div>
 </div>
