@@ -23,6 +23,13 @@
     </div>
   </div>
 
+<%# Review Area %>
+
+<div class="r-container mt-4">
+<div class="sketchy">
+
+<h2><b><u>REVIEWS</u><b/></h2>
+
 <% @pet.bookings.each do |booking| %>
   <% if booking.reviews.present? %>
     <% booking.reviews.each do |review|  %>
@@ -30,3 +37,6 @@
     <% end %>
   <% end %>
 <% end %>
+
+</div>
+</div>
