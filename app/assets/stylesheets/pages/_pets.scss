@@ -97,3 +97,40 @@
   position: sticky;
   top: 0;
 }
+
+
+
+.body {
+  padding: 20px;
+  font-family: 'Just Another Hand',
+cursive;
+    background: #f3f3f3;
+}
+
+
+.sketchy {
+    padding: 4rem 8rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    font-size: 10px;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #fcfbfb;
+    position: relative;
+    bottom: -23px;
+    left: 13px;
+
+    &::before {
+        content: '';
+        border: 1px solid #353535;
+        display: block;
+
+        position: absolute;
+
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+    }
+}
