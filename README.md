@@ -1,7 +1,7 @@
 # Bed & Bones
 A marketplace for renting pets... from Pooches to Parrots 🦜
 
-![Our Landing ](./public/bed&boneslandingpage.png)
+![Our Landing ](./public/bedandboneslandingpage.png)
 
 ## Contributors
 
